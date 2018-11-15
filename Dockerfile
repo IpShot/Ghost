@@ -5,8 +5,10 @@ ADD . /blog
 
 RUN apk update
 RUN apk upgrade
-RUN apk add git
-RUN apk add yarn
+RUN apk add --update --no-cache git yarn python gcc g++ make libc6-compat
+RUN apk add vips-dev fftw-dev build-base --no-cache \
+        --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+        --repository http://dl-3.alpinelinux.org/alpine/edge/main
 
 RUN git submodule init
 RUN git submodule update
