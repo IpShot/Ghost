@@ -73,5 +73,13 @@ module.exports = {
 
     get oembed() {
         return shared.pipeline(require('./oembed'), localUtils);
+    },
+
+    get slack() {
+        return shared.pipeline(require('./slack'), localUtils);
+    },
+
+    get authors() {
+        return shared.pipeline(require('./authors'), localUtils);
     }
 };
